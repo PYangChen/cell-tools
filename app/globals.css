@@ -24,3 +24,60 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes bulb-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.bulbs-spinning .bulb-a {
+  animation: bulb-blink 0.4s infinite;
+}
+
+.bulbs-spinning .bulb-b {
+  animation: bulb-blink 0.4s infinite 0.2s;
+}
+
+@keyframes tube-shake {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  20% {
+    transform: rotate(-9deg) translateY(-8px);
+  }
+  40% {
+    transform: rotate(8deg) translateY(0);
+  }
+  60% {
+    transform: rotate(-7deg) translateY(-8px);
+  }
+  80% {
+    transform: rotate(6deg) translateY(0);
+  }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.tube-shaking {
+  animation: tube-shake 0.45s infinite;
+  transform-origin: 50% 90%;
+}
+
+.card-in {
+  animation: card-in 0.6s ease-out both;
+}
